@@ -1,0 +1,87 @@
+//Mobile
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 2rem 0;
+}
+.logo {
+    display: flex;
+    width: auto;
+    margin: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.logo img {
+    max-width: 100%
+}
+.choose {
+    margin-bottom: 1rem;
+    font-size: 13px;
+}
+select {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.1rem;
+    background-color: #000000;
+    opacity: 100%;
+    border: 0;
+    appearance: none;
+    
+}
+
+
+// .logo img {
+//     max-width: 150px;
+//     max-height: 150px;
+// }
+// Tablet
+
+@include tablet {
+    
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        // justify-content: center;
+        height: 340px;
+        left: 20%;
+        position: relative;
+
+    }
+    .logo {
+        margin-left: 0;
+        margin-top: 1.5rem;
+        margin-right: .5rem;
+        flex-basis: 20%;
+        max-width: 100%;
+        margin: 0;
+    }
+    .logo img {
+        max-width: auto;
+        height: auto;
+    }
+    .choose {
+        font-size: 14px;
+    }
+
+    // .righty {
+    //     display: flex;
+    //     justify-content: center;
+    // }
+}
+@include desktop {
+    .container  {
+        justify-content: left;
+        left: 0;
+    }
+    .logo {
+        justify-content: left;
+        
+    }
+    .choose {
+        font-size: 16px;
+    }
+}
