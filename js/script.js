@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  $('#dropdown').on('change', function () {
+  $('.dropdown').on('change', function () {
     $('.loader').show()
-    let select = $('#dropdown').val();
+    let select = $('.dropdown').val();
 
     $.ajax({
       method: 'get',
@@ -10,25 +10,22 @@ $(document).ready(function () {
       .done(function (data) {
           
         $('.stories').empty();
-        // console.log(data);
         let results = data.results;
         results = results.filter(function(item) {
           return item.multimedia.length;
         });
           results = results.slice(0,12);
         for(let article of results){
-            console.log(article);
         
             const articleHtml = `<div onclick="location.href='${article.url}';" class="article" style="background:url(${article.multimedia[4].url});background-size:cover;background-position:center">
                 <p class="p">${article.abstract}</p>
                 </div>`;
                 $('.stories').append(articleHtml);
-                $('.logo img').css({ "max-width": "67px", "margin-top": "0rem", "margin-left": "2rem" });
-                $('#dropdown').css({ "margin-bottom": "1rem" });
-                $('.container').css({ "height": "80px", "transition-duration":"2s", "align-items":"start"});
-                $('.logo').css({ "text-align":"left", "flex-basis":"13.5%"}); 
-                // $('.righty').css({""}) 
-                $('.loader').remove()         
+                $('.logo img').addClass("img-change");
+                $('.dropdown').addClass("dropdown-change");
+                $('.container').addClass("container-change");
+                $('.logo').addClass("logo-change"); 
+                $('.loader').remove();         
         }
       })
       .fail(function (err) {
@@ -36,6 +33,10 @@ $(document).ready(function () {
       });// end of .ajax
 
   });// end of .on change event
+  // logo.css({ "text-align":"left", "flex-basis":"13.5%"})
+  // container.css({ "height": "80px", "transition-duration":"2s", "align-items":"start"})
+  // dropdown.css({ "margin-bottom": "1rem" })
+  // logoimg.css({ "max-width": "67px", "margin-top": "0rem", "margin-left": "2rem" })
 // ('.stories').on('click'function() 
 // $.open(results.url)
 // })

@@ -4,13 +4,19 @@ footer {
     text-align: center;
     font-size: 14px;
     
-}
-footer p {
+    p {
     margin-top: 20px;
-    justify-content: left;
-    display: flex;
     margin-left: 2rem;
+    }
 }
 .name {
     text-transform: uppercase;
+}
+
+@include desktop {
+    
+    footer p {
+    display: flex;
+    justify-content: left;
+    }
 }

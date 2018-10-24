@@ -13,10 +13,14 @@
     margin-left: auto;
     margin-right: auto;
     
-}
-.logo img {
+    img {
     max-width: 100%
+    }
 }
+.img-change {
+    width: 128px
+}
+
 .choose {
     margin-bottom: 1rem;
     font-size: 13px;
@@ -28,15 +32,9 @@ select {
     background-color: #000000;
     opacity: 100%;
     border: 0;
-    appearance: none;
-    
+    appearance: none;   
 }
 
-
-// .logo img {
-//     max-width: 150px;
-//     max-height: 150px;
-// }
 // Tablet
 
 @include tablet {
@@ -45,7 +43,6 @@ select {
         display: flex;
         align-items: center;
         flex-direction: row;
-        // justify-content: center;
         height: 340px;
         left: 20%;
         position: relative;
@@ -66,11 +63,22 @@ select {
     .choose {
         font-size: 14px;
     }
-
-    // .righty {
-    //     display: flex;
-    //     justify-content: center;
-    // }
+    .img-change {
+        width: 67px;
+        margin-top: 0rem;
+    }
+    .dropdown-change {
+        margin-bottom: 1rem;
+    }
+    .container-change {
+        height: 72px;
+        transition-duration: 2s;
+        align-items: start;
+    }
+    .logo-change {
+        text-align: left;
+        flex-basis: 13.5%;
+    }
 }
 @include desktop {
     .container  {
@@ -79,7 +87,6 @@ select {
     }
     .logo {
         justify-content: left;
-        
     }
     .choose {
         font-size: 16px;
