@@ -19,19 +19,21 @@ $(document).ready( () => {
         });
           results = results.slice(0,12);
         for(let article of results){
-            const articleHtml = `<div onclick="location.href='${article.url}';" class="article" style="background:url(${article.multimedia[4].url});background-size:cover;background-position:center">
+            const articleHtml = `<a href="${article.url}" class="article" style="background:url(${article.multimedia[4].url});background-size:cover;background-position:center">
                 <p class="p">${article.abstract}</p>
-                </div>`;
+                </a>`;
                 $('.stories').append(articleHtml);
                 $('.logo img').addClass("img-change");
                 $('.dropdown').addClass("dropdown-change");
                 $('.container').addClass("container-change");
-                $('.logo').addClass("logo-change"); 
-                $loader.remove();         
+                $('.logo').addClass("logo-change");                
         }
+        $loader.remove(); 
       })
       .fail(function (err) {
+        alert("failure");
         throw err;
+        
       });// end of .ajax
     } // end of .on change event
 });// end of doc ready
