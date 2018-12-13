@@ -28,7 +28,7 @@ $(document).ready( () => {
                 $('.container').addClass("container-change");
                 $('.logo').addClass("logo-change");                
         }
-        $loader.remove(); 
+        $loader.hide(); 
       })
       .fail(function (err) {
         alert("failure");
